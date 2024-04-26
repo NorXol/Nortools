@@ -1,4 +1,4 @@
-package nor.tools
+package nor.tools;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -20,12 +20,14 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Random;
+import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class NTools extends JavaPlugin implements Listener {
 
     private BossBar bossBar;
     private final Random random = new Random();
+    private final UUID kitMasterUUID = UUID.fromString("bd3daddb-5d41-4300-a5da-e3b6927e7b36"); // KitMasterGamer UUID
 
     @Override
     public void onEnable() {
@@ -35,7 +37,7 @@ public class NTools extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerInteractEntity(PlayerInteractEntityEvent event) {
         Player player = event.getPlayer();
-        if (player.isSneaking() && event.getRightClicked().getName().equalsIgnoreCase("KitMasterGamer")) {
+        if (player.isSneaking() && event.getRightClicked().getUniqueId().equals(kitMasterUUID)) {
             startBossBar(player);
             event.setCancelled(true); // Prevents the player from interacting with KitMasterGamer for other purposes
         }
