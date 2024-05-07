@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Navy Blue Background with Button</title>
+    <title>Animated Button</title>
     <style>
         body {
-            background-color: #001F3F; /* Dark navy blue */
-            color: #FFFFFF; /* White text for contrast */
-            font-family: Arial, sans-serif; /* Optional: Choose your preferred font */
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(3,1,46,1) 30%, rgba(6,1,59,1) 49%, rgba(6,1,50,1) 65%, rgba(7,0,34,1) 100%);
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -20,23 +21,36 @@
 
         .btn {
             display: inline-block;
-            background-color: #FFD700; /* Yellow */
-            color: #000000; /* Black text for contrast */
+            background: rgb(250,193,0);
+            background: linear-gradient(90deg, rgba(250,193,0,1) 34%, rgba(255,186,10,1) 62%);
+            color: #000000;
             text-decoration: none;
             padding: 5px 15px;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 50%;
+            font-size: 1.75rem;
+            font-weight: 400;
             cursor: pointer;
+            border: none;
+            width: 700px;
+            height: 880px;
+            text-align: center;
+            line-height: 880px;
+            transition: all 4.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
         .btn:hover {
-            background-color: #FFFF00; /* Lighter yellow on hover */
+            transform: scale(1.2);
+        }
+
+        .btn span {
+            display: inline-block;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
 
-<a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" class="btn" style="width: 45px; height: 15px;">Watch Now</a>
+<a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" class="btn"><span>Watch Now</span></a>
 
 </body>
 </html>
